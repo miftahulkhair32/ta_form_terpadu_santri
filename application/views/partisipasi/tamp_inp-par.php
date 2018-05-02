@@ -150,7 +150,7 @@ $(document).ready(function(){
         if(this.value !='') vd = parseInt(this.value,10) - 110;
         $('#td').val(vd);
     });
-    $(a,b,c,d).bind('keyup',function() {
+    $('#hd').bind('keyup',function() {
         var ve;
         if(this.value !='') ve += parseInt(this.value,10);
         $('#te').val(ve));
