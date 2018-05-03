@@ -32,13 +32,13 @@
                                 <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','id'=>'a','rel'=>'hd']) ?>
                             </td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)']) ?>
+                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'ter']) ?>
                             </td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)']) ?>
+                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'bc']) ?>
                             </td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','id'=>'ta','readonly'=>'true']) ?>
+                                <?= form_input('','',['class'=>'col-xs-12','id'=>'ta','readonly'=>'true','rel'=>'jk']) ?>
                             </td>
                         </tr>
                         <tr>
@@ -47,13 +47,13 @@
                                 <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','id'=>'b','rel'=>'hd']) ?>
                             </td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)']) ?>
+                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'ter']) ?>
                             </td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)']) ?>
+                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'bc']) ?>
                             </td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','id'=>'tb','readonly'=>'true']) ?>
+                                <?= form_input('','',['class'=>'col-xs-12','id'=>'tb','readonly'=>'true','rel'=>'jk']) ?>
                             </td>
                         </tr>
                         <tr>
@@ -62,13 +62,13 @@
                                 <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','id'=>'c','rel'=>'hd']) ?>
                             </td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'']) ?>
+                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'ter']) ?>
                             </td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'']) ?>
+                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'bc']) ?>
                             </td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','id'=>'tc','readonly'=>'true']) ?>
+                                <?= form_input('','',['class'=>'col-xs-12','id'=>'tc','readonly'=>'true','rel'=>'jk']) ?>
                             </td>
                         </tr>
                         <tr>
@@ -77,13 +77,13 @@
                                 <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','id'=>'d','rel'=>'hd']) ?>
                             </td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'']) ?>
+                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'tel']) ?>
                             </td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'']) ?>
+                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'bc']) ?>
                             </td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','id'=>'td','readonly'=>'true']) ?>
+                                <?= form_input('','',['class'=>'col-xs-12','id'=>'td','readonly'=>'true','rel'=>'jk']) ?>
                             </td>
                         </tr>
                         <tr>
@@ -92,13 +92,13 @@
                                 <?= form_input('total','',['class'=>'col-xs-12','readonly'=>'true','id'=>'te']) ?>
                             </td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','readonly'=>'true']) ?>
+                                <?= form_input('','',['class'=>'col-xs-12','readonly'=>'true','id'=>'tt']) ?>
                             </td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','readonly'=>'true']) ?>
+                                <?= form_input('','',['class'=>'col-xs-12','readonly'=>'true','id'=>'tp']) ?>
                             </td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','readonly'=>'true']) ?>
+                                <?= form_input('','',['class'=>'col-xs-12','readonly'=>'true','id'=>'tjk']) ?>
                             </td>
                         </tr>
                         <tr>
@@ -146,11 +146,37 @@ $(document).ready(function(){
         if(this.value !='') vd = parseInt(this.value,10) - 110;
         $('#td').val(vd);
     });
-    var hd = 'input[rel=hd]';
+    var hd = "input[rel=hd]";
     $(hd).bind('keyup',function() {
-        var ve;
-        if(this.value !='') ve += parseInt(this.value,10);
+        var ve=0;
+        $(hd).each(function() {
+            if(this.value !='') ve += parseInt(this.value,10);
+        });
         $('#te').val(ve);
+    });
+    var hr = "input[rel=ter]";
+    $(hr).bind('keyup',function() {
+        var vr=0;
+        $(hr).each(function() {
+            if(this.value !='') vr += parseInt(this.value,10);
+        });
+        $('#tt').val(vr);
+    });
+    var bc = "input[rel=bc]";
+    $(bc).bind('keyup',function() {
+        var vbc=0;
+        $(bc).each(function() {
+            if(this.value !='') vbc += parseInt(this.value,10);
+        });
+        $('#tp').val(vbc);
+    });
+    var jk = "input[rel=jk]";
+    $('input').bind('keyup',function() {
+        var vjk=0;
+        $(jk).each(function() {
+            if(this.value !='') vjk += parseInt(this.value,10);
+        });
+        $('#tjk').val(vjk);
     });
 });
 </script>
