@@ -29,7 +29,7 @@
                         <tr>
                             <td class="center"><strong>Pekan 1</strong></td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'a','id'=>'hd']) ?>
+                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','id'=>'a']) ?>
                             </td>
                             <td class="center">
                                 <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)']) ?>
@@ -44,7 +44,7 @@
                         <tr>
                             <td class="center"><strong>Pekan 2</strong></td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'b','id'=>'hd']) ?>
+                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','id'=>'b']) ?>
                             </td>
                             <td class="center">
                                 <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)']) ?>
@@ -59,7 +59,7 @@
                         <tr>
                             <td class="center"><strong>Pekan 3</strong></td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'c']) ?>
+                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','id'=>'c']) ?>
                             </td>
                             <td class="center">
                                 <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'']) ?>
@@ -74,7 +74,7 @@
                         <tr>
                             <td class="center"><strong>Pekan 4</strong></td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'d']) ?>
+                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','id'=>'d']) ?>
                             </td>
                             <td class="center">
                                 <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'']) ?>
@@ -126,26 +126,22 @@
 </script>
 <script>
 $(document).ready(function(){
-    var a = "input[rel=a]";
-    $(a).bind('keyup',function() {
+    $('#a').bind('keyup',function() {
         var va;
         if(this.value !='') va = parseInt(this.value,10) - 110;
         $('#ta').val(va);
     });
-    var b = "input[rel=b]";
-    $(b).bind('keyup',function() {
+    $('#b').bind('keyup',function() {
         var vb;
         if(this.value !='') vb = parseInt(this.value,10) - 110;
         $('#tb').val(vb);
     });
-    var c = "input[rel=c]";
-    $(c).bind('keyup',function() {
+    $('#c').bind('keyup',function() {
         var vc;
         if(this.value !='') vc = parseInt(this.value,10) - 110;
         $('#tc').val(vc);
     });
-    var d = "input[rel=d]";
-    $(d).bind('keyup',function() {
+    $('#d').bind('keyup',function() {
         var vd;
         if(this.value !='') vd = parseInt(this.value,10) - 110;
         $('#td').val(vd);
