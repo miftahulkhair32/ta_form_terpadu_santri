@@ -47,4 +47,16 @@ class Pencapaian extends CI_Controller {
         $isi['data']        =   $this->m_pencapaian->get_data();
         $this->load->view('standar',$isi);
     }
+
+    public function edit(){
+        $this->keamanan->cek_santri();
+        $id = $this->uri->segment(3);
+        $this->db->where('id',$id);
+        $e = $this->db->get('pencapaian')->row_array();
+        $isi['judul']       =   'Pencapaian';
+        $isi['subjudul']    =   'Edit';
+        $isi['konten']      =   'pencapaian/tamp_edi-pen';
+        $isi['data']        =   $e;
+        $this->load->view('standar',$isi);
+    }
 }
