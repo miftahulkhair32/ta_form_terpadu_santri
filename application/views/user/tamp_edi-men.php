@@ -70,6 +70,6 @@ if(!empty($info)){
                 </span>
             </div>
         </div>
-
+    <?= form_close() ?>
     </div>
 </div>

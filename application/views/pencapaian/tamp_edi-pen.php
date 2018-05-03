@@ -42,6 +42,16 @@ if(!empty($info)){
                 </span>
             </label>
         </div>
-        
+
+        <div class="space-24"></div>
+
+        <div class="clearfix form-actions">
+            <div class="col-md-offset-1 col-md-9">
+                <span class="bigger-110">
+                    <?= form_submit('submit','Kirim',['class'=>'btn btn-success']) ?>
+                </span>
+            </div>
+        </div>
+        <?= form_close() ?>
     </div>
 </div>
