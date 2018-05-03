@@ -20,4 +20,14 @@ class Partisipasi extends CI_Controller {
         ];
         $this->load->view('standar',$isi);
     }
+
+    public function proses_input(){
+        if($this->m_partisipasi->input()){
+            $this->session->set_flashdata('info','<div class="alert alert-block alert-success"><i class="ace icon fa fa-check"></i> Inputan Pelanggaran <strong> SUKSES !!</strong></div>');
+            redirect('home');
+        } else {
+            $this->session->set_flashdata('info','<div class="alert alert-danger"><i class="ace icon fa fa-times"></i> Input Pelanggaran <strong> GAGAL !! </strong> </div>');
+            redirect('partisipasi');
+        }
+    }
 }

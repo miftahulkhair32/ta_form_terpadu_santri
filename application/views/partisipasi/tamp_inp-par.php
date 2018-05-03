@@ -14,7 +14,7 @@
         </div>
         <div class="row">
             <div class="col-xs-12">
-                <?= form_open('pelanggaran/proses_input') ?>
+                <?= form_open('partisipasi/proses_input') ?>
                 <table class="table table-bordered table-hover">
                     <thead>
                         <tr>
@@ -25,65 +25,67 @@
                             <th class="center">Kurang</th>
                         </tr>
                     </thead>
+                    <?= form_hidden('nama',$this->session->userdata('nama')) ?>
+                    <?= form_hidden('bulan',$bulan) ?>
                     <tbody>
                         <tr>
                             <td class="center"><strong>Pekan 1</strong></td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','id'=>'a','rel'=>'hd']) ?>
+                                <?= form_input('hadir1','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','id'=>'a','rel'=>'hd']) ?>
                             </td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'ter']) ?>
+                                <?= form_input('lambat1','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'ter']) ?>
                             </td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'bc']) ?>
+                                <?= form_input('tidak1','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'bc']) ?>
                             </td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','id'=>'ta','readonly'=>'true','rel'=>'jk']) ?>
+                                <?= form_input('kurang1','',['class'=>'col-xs-12','id'=>'ta','readonly'=>'true','rel'=>'jk']) ?>
                             </td>
                         </tr>
                         <tr>
                             <td class="center"><strong>Pekan 2</strong></td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','id'=>'b','rel'=>'hd']) ?>
+                                <?= form_input('hadir2','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','id'=>'b','rel'=>'hd']) ?>
                             </td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'ter']) ?>
+                                <?= form_input('lambat2','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'ter']) ?>
                             </td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'bc']) ?>
+                                <?= form_input('tidak2','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'bc']) ?>
                             </td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','id'=>'tb','readonly'=>'true','rel'=>'jk']) ?>
+                                <?= form_input('kurang2','',['class'=>'col-xs-12','id'=>'tb','readonly'=>'true','rel'=>'jk']) ?>
                             </td>
                         </tr>
                         <tr>
                             <td class="center"><strong>Pekan 3</strong></td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','id'=>'c','rel'=>'hd']) ?>
+                                <?= form_input('hadir3','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','id'=>'c','rel'=>'hd']) ?>
                             </td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'ter']) ?>
+                                <?= form_input('lambat3','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'ter']) ?>
                             </td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'bc']) ?>
+                                <?= form_input('tidak3','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'bc']) ?>
                             </td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','id'=>'tc','readonly'=>'true','rel'=>'jk']) ?>
+                                <?= form_input('kurang3','',['class'=>'col-xs-12','id'=>'tc','readonly'=>'true','rel'=>'jk']) ?>
                             </td>
                         </tr>
                         <tr>
                             <td class="center"><strong>Pekan 4</strong></td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','id'=>'d','rel'=>'hd']) ?>
+                                <?= form_input('hadir4','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','id'=>'d','rel'=>'hd']) ?>
                             </td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'tel']) ?>
+                                <?= form_input('lambat4','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'tel']) ?>
                             </td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'bc']) ?>
+                                <?= form_input('tidak4','',['class'=>'col-xs-12','onkeypress'=>'return ha(event)','rel'=>'bc']) ?>
                             </td>
                             <td class="center">
-                                <?= form_input('','',['class'=>'col-xs-12','id'=>'td','readonly'=>'true','rel'=>'jk']) ?>
+                                <?= form_input('kurang4','',['class'=>'col-xs-12','id'=>'td','readonly'=>'true','rel'=>'jk']) ?>
                             </td>
                         </tr>
                         <tr>
@@ -110,6 +112,9 @@
                         </tr>
                     </tbody>
                 </table>
+                <div>
+                    <?= form_submit('submit','KIRIM',['class'=>'btn btn-primary']) ?>
+                </div>
                 <?= form_close() ?>
             </div>
         </div>

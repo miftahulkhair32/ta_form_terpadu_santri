@@ -14,17 +14,24 @@ class M_artikel extends CI_Model {
         $con['encrypt_name']     =   TRUE;
         $this->upload->initialize($con);
         $r = 'artikel';
-        if(!$this->upload->do_upload($r)){
-            $this->session->set_flashdata('info','<div class="alert alert-danger"><i class="ace icon fa fa-times"></i> Upload File <strong> GAGAL !! </strong> </div>');
-            redirect('artikel');
+        $data = [
+            'nama'      =>  $this->input->post('nama'),
+            'bulan'     =>  $this->input->post('bulan'),
+            'judul'     =>  $this->input->post('judul'),
+            'artikel'   =>  $this->upload->data('file_name')
+        ];
+        $cek = ['nama'=>$data['nama'],'bulan'=>$data['bulan']];
+        if($this->db->get_where('artikel',$cek)->num_rows()>0){
+            $this->session->set_flashdata('info','<div class="alert alert-warning"><strong>Peringatan!!</strong> Anda Sudah MengInput Artikel Bulan Ini</div>');
+            $this->session->set_flashdata('info1','<div class="alert alert-info"><strong>Catatan !!</strong> Jika Ingin memperbaiki Data Inputan Bulan Ini Hubungi Pengasuhan </div>');
+            redirect('home');
         } else {
-            $data = [
-                'nama'      =>  $this->input->post('nama'),
-                'bulan'     =>  $this->input->post('bulan'),
-                'judul'     =>  $this->input->post('judul'),
-                'artikel'   =>  $this->upload->data('file_name')
-            ];
-            return $this->db->insert('artikel',$data);
+            if(!$this->upload->do_upload($r)){
+                $this->session->set_flashdata('info','<div class="alert alert-danger"><i class="ace icon fa fa-times"></i> Upload File <strong> GAGAL !! </strong> </div>');
+                redirect('artikel');
+            } else {
+                return $this->db->insert('artikel',$data);
+            }
         }
     }
 
