@@ -59,4 +59,26 @@ class Pelanggaran extends CI_Controller {
         $this->load->view('standar',$isi);
     }
 
+    public function proses_edit(){
+        $this->keamanan->cek_santri();
+        if($this->m_pelanggaran->edit() == FALSE){
+            $this->session->set_flashdata('info','<div class="alert alert-danger"><i class="ace icon fa fa-times"></i> Edit Pelanggaran <strong> GAGAL !! </strong></div>');
+            redirect('pelanggaran/cek');
+        } else {
+            $this->session->set_flashdata('info','<div class="alert alert-block alert-success"><i class="ace icon fa fa-check"></i> Edit Pelanggaran <strong> SUKSES !!</strong></div>');
+            redirect('pelanggaran/cek');
+        }
+    }
+
+    public function hapus(){
+        $this->keamanan->cek_santri();
+        if($this->m_pelanggaran->hapus() == FALSE){
+            $this->session->set_flashdata('info','<div class="alert alert-danger"><i class="ace icon fa fa-times"></i> Hapus Pelanggaran <strong> GAGAL !! </strong></div>');
+            redirect('pelanggaran/cek');
+        } else {
+            $this->session->set_flashdata('info','<div class="alert alert-block alert-success"><i class="ace icon fa fa-check"></i> Hapus Pelanggaran <strong> SUKSES !!</strong></div>');
+            redirect('pelanggaran/cek');
+        }
+    }
+
 }

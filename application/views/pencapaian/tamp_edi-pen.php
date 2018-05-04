@@ -38,7 +38,7 @@ if(!empty($info)){
             <label class="block clearfix col-xs-4">
                 <span class="block input-icon input-icon-right">
                     <?= form_input('total',$data['total'],['class'=>'form-control','id'=>'tot','placeholder'=>'Total']) ?>
-                    <i class="ace-icon fa fa-user"></i>
+                    <i class="ace-icon fa fa-certificate"></i>
                 </span>
             </label>
         </div>
