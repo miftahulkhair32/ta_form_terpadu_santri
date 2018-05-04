@@ -33,4 +33,13 @@ class M_pencapaian extends CI_Model {
         $yu = $this->db->get();
         return $yu;
     }
+
+    public function edit(){
+        $id  = $this->input->post('id');
+        $tot = $this->input->post('total');
+        $this->db->set('total',$tot);
+        $this->db->where('id',$id);
+        return $this->db->update('pencapaian');
+        
+    }
 }

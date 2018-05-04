@@ -43,6 +43,8 @@ if(!empty($info)){
             </label>
         </div>
 
+        <?= form_hidden('id',$data['id']) ?>
+
         <div class="space-24"></div>
 
         <div class="clearfix form-actions">

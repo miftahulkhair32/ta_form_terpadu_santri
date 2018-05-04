@@ -61,6 +61,8 @@ class Pencapaian extends CI_Controller {
     }
 
     public function proses_edit(){
-        
+        if($this->m_pencapaian->edit()){
+            
+        }
     }
 }
