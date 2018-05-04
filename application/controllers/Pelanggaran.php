@@ -47,4 +47,16 @@ class Pelanggaran extends CI_Controller {
         $this->load->view('standar',$isi);
     }
 
+    public function edit(){
+        $this->keamanan->cek_santri();
+        $id = $this->uri->segment(3);
+        $this->db->where('id',$id);
+        $e = $this->db->get('pelanggaran')->row_array();
+        $isi['judul']       =   'Pelanggaran';
+        $isi['subjudul']    =   'Edit';
+        $isi['konten']      =   'pelanggaran/tamp_edi-pel';
+        $isi['data']        =   $e;
+        $this->load->view('standar',$isi);
+    }
+
 }
