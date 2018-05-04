@@ -41,4 +41,10 @@ class M_pencapaian extends CI_Model {
         $this->db->where('id',$id);
         return $this->db->update('pencapaian');
     }
+
+    public function hapus(){
+        $id = $this->uri->segment(3);
+        $this->db->where('id',$id);
+        return $this->db->delete('pencapaian');
+    }
 }
