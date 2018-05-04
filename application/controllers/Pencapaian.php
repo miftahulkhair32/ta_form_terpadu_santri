@@ -59,4 +59,8 @@ class Pencapaian extends CI_Controller {
         $isi['data']        =   $e;
         $this->load->view('standar',$isi);
     }
+
+    public function proses_edit(){
+        
+    }
 }
