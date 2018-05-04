@@ -61,8 +61,12 @@ class Pencapaian extends CI_Controller {
     }
 
     public function proses_edit(){
-        if($this->m_pencapaian->edit()){
-            
+        if($this->m_pencapaian->edit() == FALSE){
+            $this->session->set_flashdata('info','<div class="alert alert-danger"><i class="ace icon fa fa-times"></i> Edit Pencapaian <strong> GAGAL !! </strong></div>');
+            redirect('pencapaian/cek');
+        } else {
+            $this->session->set_flashdata('info','<div class="alert alert-block alert-success"><i class="ace icon fa fa-check"></i> Edit Pencapaian <strong> SUKSES !!</strong></div>');
+            redirect('pencapaian/cek');
         }
     }
 }

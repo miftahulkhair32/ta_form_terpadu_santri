@@ -40,6 +40,5 @@ class M_pencapaian extends CI_Model {
         $this->db->set('total',$tot);
         $this->db->where('id',$id);
         return $this->db->update('pencapaian');
-        
     }
 }
