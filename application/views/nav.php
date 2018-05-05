@@ -8,6 +8,9 @@
         <b class="arrow"></b>
     </li>
 
+    <?php
+    if($this->session->userdata('status')=='menejemen'){
+    ?>
     <li class="">
         <a href="#" class="dropdown-toggle">
             <i class="menu-icon fa fa-desktop"></i>
@@ -105,7 +108,43 @@
             </li>
         </ul>
     </li>
+    
+    <li>
+        <a href="#" class="dropdown-toggle">
+            <i class="menu-icon fa fa-users"></i>
+            <span class="menu-text"> User </span>
+            <b class="arrow fa fa-angle-down"></b>
+        </a>
 
+        <b class="arrow"></b>
+
+        <ul class="submenu">
+            <li>
+                <a href="<?= base_url('index.php/user/daftar') ?>">
+                    <i class="menu-icon fa fa-user"></i>
+                    Tambah User
+                </a>
+
+                <b class="arrow"></b>
+
+            </li>
+
+            <li>
+                <a href="<?= base_url('index.php/user/cek_daftar') ?>">
+                    <i class="menu-icon fa fa-list-alt"></i>
+                    Daftar User
+                </a>
+
+                <b class="arrow"></b>
+                
+            </li>
+        </ul>
+    </li>
+    <?php } ?>
+
+    <?php
+    if($this->session->userdata('status') != 'menejemen'){
+    ?>
     <li class="">
         <a href="#" class="dropdown-toggle">
             <i class="menu-icon fa fa-pencil-square-o"></i>
@@ -162,38 +201,7 @@
             </li>
         </ul>
     </li>
-
-    <li>
-        <a href="#" class="dropdown-toggle">
-            <i class="menu-icon fa fa-users"></i>
-            <span class="menu-text"> User </span>
-            <b class="arrow fa fa-angle-down"></b>
-        </a>
-
-        <b class="arrow"></b>
-
-        <ul class="submenu">
-            <li>
-                <a href="<?= base_url('index.php/user/daftar') ?>">
-                    <i class="menu-icon fa fa-user"></i>
-                    Tambah User
-                </a>
-
-                <b class="arrow"></b>
-
-            </li>
-
-            <li>
-                <a href="<?= base_url('index.php/user/cek_daftar') ?>">
-                    <i class="menu-icon fa fa-list-alt"></i>
-                    Daftar User
-                </a>
-
-                <b class="arrow"></b>
-                
-            </li>
-        </ul>
-    </li>
+    <?php } ?>
 
     <li>
         <a href="<?= base_url('index.php/user/profil') ?>">

@@ -47,4 +47,16 @@ class Partisipasi extends CI_Controller {
         $isi['data']        =   $this->m_partisipasi->get_data();
         $this->load->view('standar',$isi);
     }
+
+    public function edit(){
+        $this->keamanan->cek_santri();
+        $id = $this->uri->segment(3);
+        $this->db->where('id',$id);
+        $e = $this->db->get('partisipasi')->row_array();
+        $isi['judul']       =   'Partisipasi';
+        $isi['subjudul']    =   'Edit';
+        $isi['konten']      =   'partisipasi/tamp_edi-par';
+        $isi['data']        =   $e;
+        $this->load->view('standar',$isi);
+    }
 }
