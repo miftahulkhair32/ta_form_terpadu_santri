@@ -30,4 +30,12 @@ class Partisipasi extends CI_Controller {
             redirect('partisipasi');
         }
     }
+
+    public function cek(){
+        $this->keamanan->cek_santri();
+        $isi['judul']       =   'From';
+        $isi['subjudul']    =   'Partisipasi';
+        $isi['konten']      =   'partisipasi/tamp_cek-par';
+        $this->load->view('standar',$isi);
+    }
 }
