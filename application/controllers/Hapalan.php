@@ -45,4 +45,28 @@ class Hapalan extends CI_Controller {
         $isi['data']        =   $this->m_hapalan->get_data();
         $this->load->view('standar',$isi);
     }
+
+    public function edit(){
+        $this->keamanan->cek_santri();
+        $id = $this->uri->segment(3);
+        $this->db->where('id',$id);
+        $e = $this->db->get('tahfizh')->row_array();
+        $isi['judul']       =   'Tahfizh';
+        $isi['subjudul']    =   'Edit';
+        $isi['konten']      =   'hapalan/tamp_edi-tah';
+        $isi['data']        =   $e;
+        $this->load->view('standar',$isi);
+    }
+
+    public function proses_edit(){
+        if($this->m_hapalan->edit()){
+            $this->session->set_flashdata('info','<div class="alert alert-block alert-success"><i class="ace icon fa fa-check"></i> Edit Tahfizh <strong> SUKSES !!</strong></div>');
+            redirect('hapalan/cek');
+        } else {
+            $this->session->set_flashdata('info','<div class="alert alert-danger"><i class="ace icon fa fa-times"></i> Edit Tahfizh <strong> GAGAL !! </strong> </div>');
+            redirect('hapalan/cek');
+        } 
+    }
+
+
 }

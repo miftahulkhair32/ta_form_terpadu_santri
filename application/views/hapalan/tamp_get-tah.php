@@ -57,10 +57,10 @@
                             <td class="center"><?= $da->makna1 ?></td>
                             <td rowspan="9" class="center">
                                 <div class="action-buttons">
-                                    <a class="green" href="#">
+                                    <a class="green" href="<?= base_url('index.php/hapalan/edit/'.$da->id) ?>">
                                         <i class="ace-icon fa fa-pencil bigger-130"></i>
                                     </a>
-                                    <a class="red" href="#">
+                                    <a class="red" onclick="hapus()" href="<?= base_url('index.php/hapalan/hapus/'.$da->id) ?>">
                                         <i class="ace-icon fa fa-trash-o bigger-130"></i>
                                     </a>
                                 </div>
@@ -123,3 +123,8 @@
         </div>
     </div>
 </div>
+<script>
+    function hapus(){
+        confirm('Anda Yakin Menghapusnya ???');
+    }
+</script>
