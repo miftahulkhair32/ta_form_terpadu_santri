@@ -59,4 +59,26 @@ class Partisipasi extends CI_Controller {
         $isi['data']        =   $e;
         $this->load->view('standar',$isi);
     }
+
+    public function proses_edit(){
+        $this->keamanan->cek_santri();
+        if($this->m_partisipasi->edit() == FALSE){
+            $this->session->set_flashdata('info','<div class="alert alert-danger"><i class="ace icon fa fa-times"></i> Edit Partisipasi <strong> GAGAL !! </strong></div>');
+            redirect('partisipasi/cek');
+        } else {
+            $this->session->set_flashdata('info','<div class="alert alert-block alert-success"><i class="ace icon fa fa-check"></i> Edit Partisipasi <strong> SUKSES !!</strong></div>');
+            redirect('partisipasi/cek');
+        }
+    }
+
+    public function hapus(){
+        $this->keamanan->cek_santri();
+        if($this->m_partisipasi->hapus() == FALSE){
+            $this->session->set_flashdata('info','<div class="alert alert-danger"><i class="ace icon fa fa-times"></i> Hapus Partisipasi <strong> GAGAL !! </strong></div>');
+            redirect('partisipasi/cek');
+        } else {
+            $this->session->set_flashdata('info','<div class="alert alert-block alert-success"><i class="ace icon fa fa-check"></i> Hapus Partisipasi <strong> SUKSES !!</strong></div>');
+            redirect('partisipasi/cek');
+        }
+    }
 }

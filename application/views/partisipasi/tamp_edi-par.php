@@ -107,7 +107,7 @@ if(!empty($info)){
                 <tr>
                     <td class="center"><strong>Total</strong></td>
                     <td class="center">
-                        <?= form_input('total','',['class'=>'col-xs-12','readonly'=>'true','id'=>'te']) ?>
+                        <?= form_input('total',$data['total'],['class'=>'col-xs-12','readonly'=>'true','id'=>'te']) ?>
                     </td>
                     <td class="center">
                         <?= form_input('','',['class'=>'col-xs-12','readonly'=>'true','id'=>'tt']) ?>
@@ -122,12 +122,80 @@ if(!empty($info)){
                 <tr>
                     <td class="center"><strong>Keterangan</strong></td>
                     <td colspan="3">
-                        <?= form_input('keterangan','',['class'=>'col-xs-12','placeholder'=>'KETERANGAN']) ?>
+                        <?= form_input('keterangan',$data['keterangan'],['class'=>'col-xs-12','placeholder'=>'KETERANGAN']) ?>
                     </td>
                     <td class="center">nb.Kurang = Hadir - 110</td>
                 </tr>
             </tbody>
         </table>
-
+        <div>
+            <?= form_submit('submit','KIRIM',['class'=>'btn btn-primary']) ?>
+        </div>
+        <?= form_close() ?>
     </div>
 </div>
+<script>
+    function ha(evt) {
+      var charCode = (evt.which) ? evt.which : event.keyCode
+       if (charCode > 31 && (charCode < 48 || charCode > 57))
+
+        return false;
+      return true;
+    }
+</script>
+<script>
+$(document).ready(function(){
+    $('#a').bind('keyup',function() {
+        var va;
+        if(this.value !='') va = parseInt(this.value,10) - 110;
+        $('#ta').val(va);
+    });
+    $('#b').bind('keyup',function() {
+        var vb;
+        if(this.value !='') vb = parseInt(this.value,10) - 110;
+        $('#tb').val(vb);
+    });
+    $('#c').bind('keyup',function() {
+        var vc;
+        if(this.value !='') vc = parseInt(this.value,10) - 110;
+        $('#tc').val(vc);
+    });
+    $('#d').bind('keyup',function() {
+        var vd;
+        if(this.value !='') vd = parseInt(this.value,10) - 110;
+        $('#td').val(vd);
+    });
+    var hd = "input[rel=hd]";
+    $(hd).bind('keyup',function() {
+        var ve=0;
+        $(hd).each(function() {
+            if(this.value !='') ve += parseInt(this.value,10);
+        });
+        $('#te').val(ve);
+    });
+    var hr = "input[rel=ter]";
+    $(hr).bind('keyup',function() {
+        var vr=0;
+        $(hr).each(function() {
+            if(this.value !='') vr += parseInt(this.value,10);
+        });
+        $('#tt').val(vr);
+    });
+    var bc = "input[rel=bc]";
+    $(bc).bind('keyup',function() {
+        var vbc=0;
+        $(bc).each(function() {
+            if(this.value !='') vbc += parseInt(this.value,10);
+        });
+        $('#tp').val(vbc);
+    });
+    var jk = "input[rel=jk]";
+    $('input').bind('keyup',function() {
+        var vjk=0;
+        $(jk).each(function() {
+            if(this.value !='') vjk += parseInt(this.value,10);
+        });
+        $('#tjk').val(vjk);
+    });
+});
+</script>
