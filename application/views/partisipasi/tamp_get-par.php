@@ -83,7 +83,7 @@
                                     <a class="green" href="<?= base_url('index.php/partisipasi/edit/'.$da['id']) ?>">
                                         <i class="ace-icon fa fa-pencil bigger-130"></i>
                                     </a>
-                                    <a class="red" href="<?= base_url('index.php/partisipasi/hapus/'.$da['id']) ?>">
+                                    <a class="red" onclick="hapus()" href="<?= base_url('index.php/partisipasi/hapus/'.$da['id']) ?>">
                                         <i class="ace-icon fa fa-trash-o bigger-130"></i>
                                     </a>
                                 </div>
@@ -98,3 +98,8 @@
         </div>
     </div>
 </div>
+<script>
+    function hapus(){
+        confirm('Anda Yakin Menghapusnya ???');
+    }
+</script>

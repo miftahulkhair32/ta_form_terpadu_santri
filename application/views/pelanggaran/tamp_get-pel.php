@@ -74,3 +74,8 @@
         </div>
     </div>
 </div>
+<script>
+    function hapus(){
+        confirm('Anda Yakin Menghapusnya ???');
+    }
+</script>
