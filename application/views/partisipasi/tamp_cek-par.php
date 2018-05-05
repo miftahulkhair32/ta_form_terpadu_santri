@@ -23,7 +23,7 @@
         ?>
         <div class="clearfix"></div>
         <div class="table-header">
-            <?= form_open('pelanggaran/get') ?>
+            <?= form_open('partisipasi/get') ?>
             <strong>Periode</strong> : <?= form_dropdown('bln',$ops,'pilih',['class'=>'btn btn-primary btn-sm']) ?>
             <?= form_submit('submit','cek',['class'=>'btn btn-primary btn-sm']) ?>
             <?= form_close() ?>

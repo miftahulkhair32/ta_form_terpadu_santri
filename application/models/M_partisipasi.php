@@ -40,4 +40,14 @@ class M_partisipasi extends CI_Model {
         return $this->db->insert('partisipasi',$data);
     }
 
+    public function get_data(){
+        $dc = $this->input->post('bln');
+        $ty = ['bulan'=>$dc,'status'=>'santri'];
+        $this->db->select('partisipasi.id as id,user.nama as nama,partisipasi.bulan as bulan,partisipasi.total,partisipasi.lambat1,partisipasi.lambat2,partisipasi.lambat3,partisipasi.lambat4,partisipasi.tidak1,partisipasi.tidak2,partisipasi.tidak3,partisipasi.tidak4,partisipasi.kurang1,partisipasi.kurang2,partisipasi.kurang3,partisipasi.kurang4,partisipasi.keterangan');
+        $this->db->from('user');
+        $this->db->join('partisipasi','user.nama = partisipasi.nama');
+        $this->db->where($ty);
+        return $this->db->get();
+    }
+
 }
