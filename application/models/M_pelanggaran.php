@@ -33,7 +33,7 @@ class M_pelanggaran extends CI_Model {
         $ty = ['bulan'=>$dc,'status'=>'santri'];
         $this->db->select('pelanggaran.id as id,pelanggaran.bulan as bulan,user.nama as nama,pelanggaran.pelanggaran as pelanggaran,pelanggaran.total as total,pelanggaran.keterangan as keterangan');
         $this->db->from('pelanggaran');
-        $this->db->join('user','user.nama = pelanggaran.nama');
+        $this->db->join('user','user.nama = pelanggaran.nama','left');
         $this->db->where($ty);
         $yu = $this->db->get();
         return $yu;

@@ -63,9 +63,9 @@ class M_hapalan extends CI_Model {
 
     public function get_data(){
         $dc = $this->input->post('bln');
-        $ty = ['tahfizh.bulan'=>$dc];
-        $this->db->select('*');
-        $this->db->from('tahfizh');
+        $ty = ['tahfizh.bulan'=>$dc,'status'=>'santri'];
+        $this->db->select('tahfizh.id,user.nama,tahfizh.bulan,tahfizh.halaman,tahfizh.tgl1');
+        $this->db->from('user');
         $this->db->where($ty);
         $t = $this->db->get();
         return $t;

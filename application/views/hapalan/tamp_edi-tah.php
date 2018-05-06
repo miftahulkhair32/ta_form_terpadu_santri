@@ -29,7 +29,7 @@
                     <tbody>
                         <tr>
                             <td class="center">
-                                <input class="from-control date-picker col-xs-12" type="date" name="tgl1">
+                                <input class="from-control date-picker col-xs-12" type="date" name="tgl1" value="<?= $data['tgl1'] ?>">
                             </td>
                             <td class="center">
                                 <?= form_input('halam',$data['halaman'],['class'=>'col-xs-12']) ?>
@@ -49,7 +49,7 @@
                         </tr>
                         <tr>
                             <td class="center">
-                                <input class="from-control date-picker col-xs-12" type="date" name="tgl2">
+                                <input class="from-control date-picker col-xs-12" type="date" name="tgl2" value="<?= $data['tgl2'] ?>">
                             </td>
                             <td class="center">
                                 <?= form_input('','',['class'=>'col-xs-12']) ?>
@@ -69,7 +69,7 @@
                         </tr>
                         <tr>
                             <td class="center">
-                                <input class="from-control date-picker col-xs-12" type="date" name="tgl3">
+                                <input class="from-control date-picker col-xs-12" type="date" name="tgl3" value="<?= $data['tgl3'] ?>">
                             </td>
                             <td class="center">
                                 <?= form_input('','',['class'=>'col-xs-12']) ?>
@@ -89,7 +89,7 @@
                         </tr>
                         <tr>
                             <td class="center">
-                                <input class="from-control date-picker col-xs-12" type="date" name="tgl4">
+                                <input class="from-control date-picker col-xs-12" type="date" name="tgl4" value="<?= $data['tgl4'] ?>">
                             </td>
                             <td class="center">
                                 <?= form_input('','',['class'=>'col-xs-12']) ?>
@@ -109,7 +109,7 @@
                         </tr>
                         <tr>
                             <td class="center">
-                                <input class="from-control date-picker col-xs-12" type="date" name="tgl5">
+                                <input class="from-control date-picker col-xs-12" type="date" name="tgl5" value="<?= $data['tgl5'] ?>">
                             </td>
                             <td class="center">
                                 <?= form_input('','',['class'=>'col-xs-12']) ?>
@@ -129,7 +129,7 @@
                         </tr>
                         <tr>
                             <td class="center">
-                                <input class="from-control date-picker col-xs-12" type="date" name="tgl6">
+                                <input class="from-control date-picker col-xs-12" type="date" name="tgl6"  value="<?= $data['tgl6'] ?>">
                             </td>
                             <td class="center">
                                 <?= form_input('','',['class'=>'col-xs-12']) ?>
@@ -149,7 +149,7 @@
                         </tr>
                         <tr>
                             <td class="center">
-                                <input class="from-control date-picker col-xs-12" type="date" name="tgl7">
+                                <input class="from-control date-picker col-xs-12" type="date" name="tgl7" value="<?= $data['tgl7'] ?>">
                             </td>
                             <td class="center">
                                 <?= form_input('','',['class'=>'col-xs-12']) ?>
@@ -169,7 +169,7 @@
                         </tr>
                         <tr>
                             <td class="center">
-                                <input class="from-control date-picker col-xs-12" type="date" name="tgl8">
+                                <input class="from-control date-picker col-xs-12" type="date" name="tgl8" value="<?= $data['tgl8'] ?>">
                             </td>
                             <td class="center">
                                 <?= form_input('','',['class'=>'col-xs-12']) ?>
@@ -189,7 +189,7 @@
                         </tr>
                         <tr>
                             <td class="center">
-                                <input class="from-control date-picker col-xs-12" type="date" name="tgl9">
+                                <input class="from-control date-picker col-xs-12" type="date" name="tgl9" value="<?= $data['tgl9'] ?>">
                             </td>
                             <td class="center">
                                 <?= form_input('','',['class'=>'col-xs-12']) ?>
