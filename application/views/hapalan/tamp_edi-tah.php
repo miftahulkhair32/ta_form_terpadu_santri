@@ -210,7 +210,7 @@
                         <tr>
                             <td colspan="5" class="center">Total</td>
                             <td class="center">
-                                <?= form_input('total','',['class'=>'input-mini','readonly'=>'true','id'=>'total']) ?>
+                                <?= form_input('total',$data['total'],['class'=>'input-mini','readonly'=>'true','id'=>'total']) ?>
                             </td>
                         </tr>
                         <?= form_hidden('id',$data['id']) ?>
