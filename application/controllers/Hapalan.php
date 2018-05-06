@@ -68,5 +68,16 @@ class Hapalan extends CI_Controller {
         } 
     }
 
+    public function hapus(){
+        $this->keamanan->cek_santri();
+        if($this->m_hapalan->hapus() == FALSE){
+            $this->session->set_flashdata('info','<div class="alert alert-danger"><i class="ace icon fa fa-times"></i> Hapus Tahfizh <strong> GAGAL !! </strong></div>');
+            redirect('hapalan/cek');
+        } else {
+            $this->session->set_flashdata('info','<div class="alert alert-block alert-success"><i class="ace icon fa fa-check"></i> Hapus Tahfizh <strong> SUKSES !!</strong></div>');
+            redirect('hapalan/cek');
+        }
+    }
+
 
 }

@@ -64,11 +64,11 @@ class M_hapalan extends CI_Model {
     public function get_data(){
         $dc = $this->input->post('bln');
         $ty = ['tahfizh.bulan'=>$dc,'status'=>'santri'];
-        $this->db->select('tahfizh.id,user.nama,tahfizh.bulan,tahfizh.halaman,tahfizh.tgl1');
+        $this->db->select('tahfizh.id,user.nama,tahfizh.bulan,tahfizh.halaman,tahfizh.tgl1,tahfizh.tgl2,tahfizh.tgl3,tahfizh.tgl4,tahfizh.tgl5,tahfizh.tgl6,tahfizh.tgl7,tahfizh.tgl8,tahfizh.tgl9,tahfizh.total,tahfizh.salah1,tahfizh.salah2,tahfizh.salah3,tahfizh.salah4,tahfizh.salah5,tahfizh.salah6,tahfizh.salah7,tahfizh.salah8,tahfizh.salah9,tahfizh.lancar1,tahfizh.lancar2,tahfizh.lancar3,tahfizh.lancar4,tahfizh.lancar5,tahfizh.lancar6,tahfizh.lancar7,tahfizh.lancar8,tahfizh.lancar9,tahfizh.makna1,tahfizh.makna2,tahfizh.makna3,tahfizh.makna4,tahfizh.makna5,tahfizh.makna6,tahfizh.makna7,tahfizh.makna8,tahfizh.makna9');
         $this->db->from('user');
+        $this->db->join('tahfizh','user.nama = tahfizh.nama','left');
         $this->db->where($ty);
-        $t = $this->db->get();
-        return $t;
+        return $this->db->get();
     }
 
     public function edit(){
@@ -115,5 +115,11 @@ class M_hapalan extends CI_Model {
         ];
         $this->db->where('id',$id);
         return $this->db->update('tahfizh',$dataHapalan);
+    }
+
+    public function hapus(){
+        $id = $this->uri->segment(3);
+        $this->db->where('id',$id);
+        return $this->db->delete('tahfizh');
     }
 }

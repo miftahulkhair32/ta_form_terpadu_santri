@@ -51,4 +51,40 @@ class Observasi extends CI_Controller {
         $isi['data']        =   $this->m_observasi->get();
         $this->load->view('standar',$isi);
     }
+
+    public function edit(){
+        $this->keamanan->cek_santri();
+        $id = $this->uri->segment(3);
+        $this->db->where('id',$id);
+        $e = $this->db->get('observasi')->row_array();
+        $u = $this->db->get_where('user',['status'=>'menejemen']);
+        $isi['judul']       =   'Observasi';
+        $isi['subjudul']    =   'Edit';
+        $isi['konten']      =   'observasi/tamp_edi-obs';
+        $isi['data']        =   $e;
+        $isi['username']    =   $u;
+        $this->load->view('standar',$isi);
+    }
+
+    public function hapus(){
+        $this->keamanan->cek_santri();
+        if($this->m_observasi->hapus() == FALSE){
+            $this->session->set_flashdata('info','<div class="alert alert-danger"><i class="ace icon fa fa-times"></i> Hapus Observasi <strong> GAGAL !! </strong></div>');
+            redirect('observasi/cek');
+        } else {
+            $this->session->set_flashdata('info','<div class="alert alert-block alert-success"><i class="ace icon fa fa-check"></i> Hapus Observasi <strong> SUKSES !!</strong></div>');
+            redirect('observasi/cek');
+        }
+    }
+
+    public function proses_edit(){
+        $this->keamanan->cek_santri();
+        if($this->m_observasi->edit() == FALSE){
+            $this->session->set_flashdata('info','<div class="alert alert-danger"><i class="ace icon fa fa-times"></i> Edit Observasi <strong> GAGAL !! </strong></div>');
+            redirect('observasi/cek');
+        } else {
+            $this->session->set_flashdata('info','<div class="alert alert-block alert-success"><i class="ace icon fa fa-check"></i> Edit Observasi <strong> SUKSES !!</strong></div>');
+            redirect('observasi/cek');
+        }
+    }
 }

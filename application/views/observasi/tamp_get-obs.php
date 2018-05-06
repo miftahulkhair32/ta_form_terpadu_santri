@@ -58,8 +58,7 @@
                     <tbody>
                     <?php
                     $no=1;
-                    foreach($data->result_array() as $da) :  
-                    ?>
+                    foreach($data->result_array() as $da) : ?>
                         <tr>
                             <td class="center"><?= $no ?></td>
                             <td class="center"><?= $da['nama'] ?></td>

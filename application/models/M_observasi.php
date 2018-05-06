@@ -72,7 +72,7 @@ class M_observasi extends CI_Model {
             $r .= $obs[$n];
         $n--;
         }
-        $this->db->select('user.nama as nama,observasi.bulan as bulan,'.$r.',pelanggaran.total as total');
+        $this->db->select('user.nama as nama,observasi.bulan as bulan,'.$r.',pelanggaran.total as total,observasi.id');
         $this->db->from('user');
         $this->db->join('observasi','user.nama = observasi.nama','left');
         $this->db->join('pelanggaran','user.nama = pelanggaran.nama and observasi.bulan = pelanggaran.bulan','left');
@@ -95,5 +95,22 @@ class M_observasi extends CI_Model {
         +----------------+-------+----------+------+-------+-------+
         3 rows in set (0,00 sec)
         */
+    }
+
+    public function hapus(){
+        $id = $this->uri->segment(3);
+        $this->db->where('id',$id);
+        return $this->db->delete('observasi');
+    }
+
+    public function edit(){
+        $id = $this->input->post('id');
+        $a = $this->db->get_where('user',['status'=>'menejemen']);
+        $user = $a->result_array();
+        foreach($user as $u){
+            $data[$u['username']] = $this->input->post($u['username']);
+        }
+        $this->db->where('id',$id);
+        return $this->db->update('observasi',$data);
     }
 }

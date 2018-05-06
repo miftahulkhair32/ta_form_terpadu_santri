@@ -52,10 +52,10 @@
                         <td class="center"><?= $da->file ?></td>
                         <td class="center">
                             <div class="action-buttons">
-                                <a class="green" href="#">
+                                <a class="green" href="<?= base_url('index.php/artikel/down/'.$da->id) ?>">
                                     <i class="ace-icon fa fa-download bigger-130"></i>
                                 </a>
-                                <a class="red" href="#">
+                                <a class="red" onclick="hapus()" href="<?= base_url('index.php/artikel/hapus/'.$da->id) ?>">
                                     <i class="ace-icon fa fa-trash-o bigger-130"></i>
                                 </a>
                             </div>
@@ -70,3 +70,8 @@
         </div>
     </div>
 </div>
+<script>
+    function hapus(){
+        confirm('Anda Yakin Menghapusnya ???');
+    }
+</script>

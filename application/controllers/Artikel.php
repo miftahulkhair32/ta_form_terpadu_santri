@@ -47,4 +47,11 @@ class Artikel extends CI_Controller {
         $isi['data']        =   $this->m_artikel->get_data();
         $this->load->view('standar',$isi);
     }
+
+    public function down(){
+        $this->load->helper('download');
+        $id = $this->uri->segment(3);
+        $p = $this->db->get_where('artikel',['id'=>$id])->row_array();
+        return force_download('.artikel/'.$p['artikel'],NULL,TRUE);
+    }
 }

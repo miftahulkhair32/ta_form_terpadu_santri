@@ -28,7 +28,7 @@ class M_pencapaian extends CI_Model {
         $ty = ['bulan'=>$dc,'status'=>'santri'];
         $this->db->select('pencapaian.id as id,user.nama as nama,pencapaian.bulan as bulan,pencapaian.total as total');
         $this->db->from('pencapaian');
-        $this->db->join('user','user.nama = pencapaian.nama');
+        $this->db->join('user','user.nama = pencapaian.nama','left');
         $this->db->where($ty);
         $yu = $this->db->get();
         return $yu;

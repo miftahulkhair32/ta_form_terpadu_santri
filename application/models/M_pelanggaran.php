@@ -35,8 +35,7 @@ class M_pelanggaran extends CI_Model {
         $this->db->from('pelanggaran');
         $this->db->join('user','user.nama = pelanggaran.nama','left');
         $this->db->where($ty);
-        $yu = $this->db->get();
-        return $yu;
+        return $this->db->get();
     }
 
     public function edit(){

@@ -38,7 +38,7 @@ class M_artikel extends CI_Model {
     public function get_data(){
         $bl = $this->input->post('bln');
         $mn = ['artikel.bulan'=>$bl,'user.status'=>'santri'];
-        $this->db->select('user.nama as nama,artikel.judul as judul,artikel.artikel as file,artikel.bulan as bulan');
+        $this->db->select('artikel.id,user.nama as nama,artikel.judul as judul,artikel.artikel as file,artikel.bulan as bulan');
         $this->db->from('user');
         $this->db->join('artikel','user.nama = artikel.nama','left');
         $this->db->where($mn);
