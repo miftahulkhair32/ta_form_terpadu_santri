@@ -17,5 +17,13 @@ class Laporan extends CI_Controller {
         $this->load->view('standar',$isi);
     }
 
+    public function get(){
+        $this->keamanan->cek_santri();
+        $isi['judul']       =   'From';
+        $isi['subjudul']    =   'Laporan';
+        $isi['konten']      =   'laporan/tamp_get-lap';
+        $isi['data']        =   $this->m_observasi->get();
+        $this->load->view('standar',$isi);
+    }
 
 }

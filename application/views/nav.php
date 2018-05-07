@@ -8,9 +8,7 @@
         <b class="arrow"></b>
     </li>
 
-    <?php
-    if($this->session->userdata('status')=='menejemen'){
-    ?>
+    <?php if($this->session->userdata('status')=='menejemen') : ?>
     <li class="">
         <a href="#" class="dropdown-toggle">
             <i class="menu-icon fa fa-desktop"></i>
@@ -140,11 +138,9 @@
             </li>
         </ul>
     </li>
-    <?php } ?>
+    <?php endif; ?>
 
-    <?php
-    if($this->session->userdata('status') != 'menejemen'){
-    ?>
+    <?php if($this->session->userdata('status') != 'menejemen') : ?>
     <li class="">
         <a href="#" class="dropdown-toggle">
             <i class="menu-icon fa fa-pencil-square-o"></i>
@@ -201,7 +197,7 @@
             </li>
         </ul>
     </li>
-    <?php } ?>
+    <?php endif; ?>
 
     <li>
         <a href="<?= base_url('index.php/user/profil') ?>">
