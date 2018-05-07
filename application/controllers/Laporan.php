@@ -6,6 +6,7 @@ class Laporan extends CI_Controller {
 	public function __construct(){
         parent::__construct();
         // letakkan magic kode disini
+        $this->load->model('m_laporan');
         $this->load->model('keamanan');
         $this->keamanan->cek_login();
     }
@@ -22,7 +23,8 @@ class Laporan extends CI_Controller {
         $isi['judul']       =   'From';
         $isi['subjudul']    =   'Laporan';
         $isi['konten']      =   'laporan/tamp_get-lap';
-        $isi['data']        =   $this->m_observasi->get();
+        $isi['mene']        =   $this->m_laporan->menej();
+        $isi['data']        =   $this->m_laporan->get();
         $this->load->view('standar',$isi);
     }
 

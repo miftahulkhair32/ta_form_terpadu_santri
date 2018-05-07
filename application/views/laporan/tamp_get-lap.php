@@ -57,6 +57,54 @@
                         <th class="center">Huruf</th>
                     </tr>
                     </thead>
+                    <tbody>
+                    <?php
+                    $m=0;
+                    foreach($mene->result() as $me ) {
+                    $poi[$m] = $me->username;
+                    $m++;
+                    }
+                    $m--;
+                    $no=1;
+                        foreach($data->result_array() as $da) : ?>
+                    <tr>
+                        <td class="center"><?= $no ?></td>
+                        <td class="center"><?= $da['nama'] ?></td>
+                        <td class="center"><?= $da['parpro'] ?></td>
+                        <?php $lol = $da['parpro']/460*100 ?>
+                        <td class="center"><?= $lol ?></td>
+                        <td class="center"><?= $da['tarpen'] ?></td>
+                        <?php $top = $da['tarpen']/34 ?>
+                        <td class="center"><?= $top ?></td>
+                        <?php
+                            $com = $m;
+                            $n=0;
+                            $jml=0;
+                            while($com>-1) {
+                            $jml += $da[$poi[$n]];
+                            $n++; 
+                            $com--;
+                            } ?>
+                        <td class="center"><?= $jml ?></td>
+                        <?php $pop = ($lol+$top+$jml)/3 ?>
+                        <td class="center"><?= $pop ?></td>
+                        <td class="center">huruf</td>
+                        <td class="center"><?= $da['jumhap'] ?></td>
+                        <td class="center"><?= $da['jumnilper'] ?></td>
+                        <?php $df = $da['jumnilper']/4 ?>
+                        <td class="center"><?= $df ?></td>
+                        <td class="center">huruf</td>
+                        <td class="center"><?= $da['jenpel'] ?></td>
+                        <td class="center"><?= $da['point'] ?></td>
+                        <td class="center"><?= $da['keterangan'] ?></td>
+                        <td class="center"><?= $da['judul'] ?>
+                            <a class="green" href="<?= base_url('index.php/artikel/down/'.$da['id']) ?>">
+                                <i class="ace-icon fa fa-download bigger-130"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                    </tbody>
                 </table>
             </div>
         </div>
