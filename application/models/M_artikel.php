@@ -44,4 +44,10 @@ class M_artikel extends CI_Model {
         $this->db->where($mn);
         return $this->db->get();
     }
+
+    public function hapus(){
+        $id = $this->uri->segment(3);
+        $this->db->where('id',$id);
+        return $this->db->delete('artikel');
+    }
 }

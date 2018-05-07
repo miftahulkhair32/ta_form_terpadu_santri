@@ -50,8 +50,20 @@ class Artikel extends CI_Controller {
 
     public function down(){
         $this->load->helper('download');
-        $id = $this->uri->segment(3);
-        $p = $this->db->get_where('artikel',['id'=>$id])->row_array();
-        return force_download('.artikel/'.$p['artikel'],NULL,TRUE);
+        $id     = $this->uri->segment(3);
+        $p      = $this->db->get_where('artikel',['id'=>$id])->row_array();
+        $data   = file_get_contents($p['artikel']); 
+        force_download('/artikel/'.$p['artikel'],$data);
+    }
+
+    public function hapus(){
+        $this->keamanan->cek_santri();
+        if($this->m_artikel->hapus() == FALSE){
+            $this->session->set_flashdata('info','<div class="alert alert-danger"><i class="ace icon fa fa-times"></i> Hapus Artikel <strong> GAGAL !! </strong></div>');
+            redirect('artikel/cek');
+        } else {
+            $this->session->set_flashdata('info','<div class="alert alert-block alert-success"><i class="ace icon fa fa-check"></i> Hapus Artikel <strong> SUKSES !!</strong></div>');
+            redirect('artikel/cek');
+        }
     }
 }
