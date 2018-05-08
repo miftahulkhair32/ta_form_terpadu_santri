@@ -28,4 +28,8 @@ class Laporan extends CI_Controller {
         $this->load->view('standar',$isi);
     }
 
+    public function pdf(){
+        
+    }
+
 }

@@ -23,7 +23,7 @@
         ?>
         <div class="clearfix"></div>
         <div class="pull-right">
-            <?= anchor('','<span><i class="fa fa-print bigger-100 white"></i> Expots ke PDF </span>',['class'=>'btn btn-sm btn-danger']) ?>
+            <?= anchor('laporan/pdf','<span><i class="fa fa-print bigger-100 white"></i> Expots ke PDF </span>',['class'=>'btn btn-sm btn-danger']) ?>
         </div>
         <div class="table-header">
             <?= form_open('laporan/get') ?>
