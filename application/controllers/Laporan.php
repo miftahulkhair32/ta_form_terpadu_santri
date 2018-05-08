@@ -6,6 +6,7 @@ class Laporan extends CI_Controller {
 	public function __construct(){
         parent::__construct();
         // letakkan magic kode disini
+        $this->load->library('pdf');
         $this->load->model('m_laporan');
         $this->load->model('keamanan');
         $this->keamanan->cek_login();
@@ -29,7 +30,7 @@ class Laporan extends CI_Controller {
     }
 
     public function pdf(){
-        
+        $this->load->view('laporan/contoh');
     }
 
 }
