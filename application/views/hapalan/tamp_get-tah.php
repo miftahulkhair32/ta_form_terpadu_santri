@@ -143,6 +143,11 @@
 </div>
 <script>
     function hapus(){
-        confirm('Anda Yakin Menghapusnya ???');
+        var x = confirm('Anda Yakin Menghapusnya ???');
+        if(x){
+            return true;
+        } else {
+            return false;
+        }
     }
 </script>

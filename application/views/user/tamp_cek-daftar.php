@@ -99,6 +99,11 @@
 </div>
 <script>
     function hapus(){
-        confirm('Anda Yakin Menghapus User ???');
+        var x = confirm('Anda Yakin Menghapus User ???');
+        if(x){
+            return true;
+        } else {
+            return false;
+        }
     }
 </script>

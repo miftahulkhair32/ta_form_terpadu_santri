@@ -22,6 +22,9 @@
         ];
         ?>
         <div class="clearfix"></div>
+        <div class="pull-right">
+            <?= anchor('','<span><i class="fa fa-print bigger-100 white"></i> Expots ke PDF </span>',['class'=>'btn btn-sm btn-danger']) ?>
+        </div>
         <div class="table-header">
             <?= form_open('laporan/get') ?>
             <?php $bul = $data->row_array()?>
@@ -72,10 +75,10 @@
                         <td class="center"><?= $da['nama'] ?></td>
                         <td class="center"><?= $da['parpro'] ?></td>
                         <?php $lol = $da['parpro']/460*100 ?>
-                        <td class="center"><?= $lol ?></td>
+                        <td class="center"><?= round($lol) ?></td>
                         <td class="center"><?= $da['tarpen'] ?></td>
                         <?php $top = $da['tarpen']/34 ?>
-                        <td class="center"><?= $top ?></td>
+                        <td class="center"><?= round($top) ?></td>
                         <?php
                             $com = $m;
                             $n=0;
@@ -85,15 +88,37 @@
                             $n++; 
                             $com--;
                             } ?>
-                        <td class="center"><?= $jml ?></td>
+                        <td class="center"><?= round($jml) ?></td>
                         <?php $pop = ($lol+$top+$jml)/3 ?>
-                        <td class="center"><?= $pop ?></td>
-                        <td class="center">huruf</td>
+                        <td class="center"><?= round($pop) ?></td>
+                        <?php if($pop >= 85) {
+                            $huf1 = 'A';
+                        } elseif($pop >= 70) {
+                            $huf1 = 'B';
+                        } elseif($pop >= 56) {
+                            $huf1 = 'C';
+                        } elseif($pop >= 45) {
+                            $huf1 = 'D';
+                        } else {
+                            $huf1 = 'E';
+                        }?>
+                        <td class="center"><?= $huf1 ?></td>
                         <td class="center"><?= $da['jumhap'] ?></td>
                         <td class="center"><?= $da['jumnilper'] ?></td>
                         <?php $df = $da['jumnilper']/4 ?>
-                        <td class="center"><?= $df ?></td>
-                        <td class="center">huruf</td>
+                        <td class="center"><?= round($df) ?></td>
+                        <?php if($df >= 85) {
+                            $huf2 = 'A';
+                        } elseif($df >= 70) {
+                            $huf2 = 'B';
+                        } elseif($df >= 56) {
+                            $huf2 = 'C';
+                        } elseif($df >= 45) {
+                            $huf2 = 'D';
+                        } else {
+                            $huf2 = 'E';
+                        }?>
+                        <td class="center"><?= $huf2 ?></td>
                         <td class="center"><?= $da['jenpel'] ?></td>
                         <td class="center"><?= $da['point'] ?></td>
                         <td class="center"><?= $da['keterangan'] ?></td>
