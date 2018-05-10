@@ -22,12 +22,12 @@
         ];
         ?>
         <div class="clearfix"></div>
+        <?php $bul = $data->row_array()?>
         <div class="pull-right">
-            <?= anchor('laporan/pdf','<span><i class="fa fa-print bigger-100 white"></i> Expots ke PDF </span>',['class'=>'btn btn-sm btn-danger']) ?>
+            <?= anchor('laporan/pdf/'.$bul['bulan'],'<span><i class="fa fa-print bigger-100 white"></i> Expots ke PDF </span>',['class'=>'btn btn-sm btn-danger']) ?>
         </div>
         <div class="table-header">
             <?= form_open('laporan/get') ?>
-            <?php $bul = $data->row_array()?>
             <strong>Periode</strong> : <?= form_dropdown('bln',$ops,$bul['bulan'],['class'=>'btn btn-primary btn-sm']) ?>
             <?= form_submit('submit','cek',['class'=>'btn btn-primary btn-sm']) ?>
             <?= form_close() ?>
