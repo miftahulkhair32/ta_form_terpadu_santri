@@ -33,7 +33,7 @@ class Laporan extends CI_Controller {
         $this->keamanan->cek_santri();
         $isi['mene']    =   $this->m_laporan->menej();
         $isi['data']    =   $this->m_laporan->get_pdf();
-        $this->load->view('laporan/pdf');
+        $this->load->view('laporan/pdf',$isi);
     }
 
 }
