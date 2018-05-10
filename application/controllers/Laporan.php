@@ -30,7 +30,7 @@ class Laporan extends CI_Controller {
     }
 
     public function pdf(){
-        $this->load->view('laporan/contoh');
+        $this->load->view('laporan/pdf');
     }
 
 }
