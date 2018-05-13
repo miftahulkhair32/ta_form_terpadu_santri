@@ -36,7 +36,6 @@
                             <th class="center">NO</th>
                             <th class="center">Nama</th>
                             <th class="center">Judul</th>
-                            <th class="center">File</th>
                             <th class="center">Aksi</th>
                         </tr>
                     </thead>

@@ -37,7 +37,6 @@
                             <th class="center">NO</th>
                             <th class="center">Nama</th>
                             <th class="center">Judul</th>
-                            <th class="center">File</th>
                             <th class="center">Aksi</th>
                         </tr>
                     </thead>
@@ -49,7 +48,6 @@
                         <td class="center"><?= $no ?></td>
                         <td class="center"><?= $da->nama ?></td>
                         <td class="center"><?= $da->judul ?></td>
-                        <td class="center"><?= $da->file ?></td>
                         <td class="center">
                             <div class="action-buttons">
                                 <a class="green" href="<?= base_url('index.php/artikel/down/'.$da->id) ?>">
