@@ -127,6 +127,7 @@ if(!empty($info)){
                     <td class="center">nb.Kurang = Hadir - 110</td>
                 </tr>
             </tbody>
+            <?= form_hidden('id',$data['id']) ?>
         </table>
         <div>
             <?= form_submit('submit','KIRIM',['class'=>'btn btn-primary']) ?>
