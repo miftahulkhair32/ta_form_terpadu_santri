@@ -9,103 +9,88 @@
     </li>
 
     <?php if($this->session->userdata('status')=='menejemen') : ?>
-    <li class="">
-        <a href="#" class="dropdown-toggle">
-            <i class="menu-icon fa fa-desktop"></i>
-            <span class="menu-text">
-                Laporan
-            </span>
+        <li class="">
+            <a href="<?= base_url('index.php/laporan'); ?>">
+                <i class="menu-icon fa fa-book red"></i>
+                Laporan Utama
+            </a>
+            <b class="arrow"></b>
+        </li>
 
-            <b class="arrow fa fa-angle-down"></b>
-        </a>
+        <li class="">
+            <a href="<?= base_url('index.php/pelanggaran/cek') ?>">
+                <i class="menu-icon fa fa-book red"></i>
+                Pelanggaran
+            </a>
 
-        <b class="arrow"></b>
+            <b class="arrow"></b>
+        </li>
 
-        <ul class="submenu nav-hide">
-            <li class="">
-                <a href="<?= base_url('index.php/laporan'); ?>">
-                    <i class="menu-icon fa fa-book red"></i>
-                    Laporan Utama
-                </a>
-                <b class="arrow"></b>
-            </li>
+        <li class="">
+            <a href="<?= base_url('index.php/partisipasi/cek') ?>">
+                <i class="menu-icon fa fa-book red"></i>
+                Partisipasi
+            </a>
 
-            <li class="">
-                <a href="<?= base_url('index.php/pelanggaran/cek') ?>">
-                    <i class="menu-icon fa fa-book red"></i>
-                    Pelanggaran
-                </a>
+            <b class="arrow"></b>
+        </li>
 
-                <b class="arrow"></b>
-            </li>
+        <li class="">
+            <a href="<?= base_url('index.php/pencapaian/cek') ?>">
+                <i class="menu-icon fa fa-book red"></i>
+                Pencapaian
+            </a>
 
-            <li class="">
-                <a href="<?= base_url('index.php/partisipasi/cek') ?>">
-                    <i class="menu-icon fa fa-book red"></i>
-                    Partisipasi
-                </a>
+            <b class="arrow"></b>
+        </li>
 
-                <b class="arrow"></b>
-            </li>
+        <li class="">
+            <a href="<?= base_url('index.php/artikel/cek') ?>">
+                <i class="menu-icon fa fa-book red"></i>
+                Artikel
+            </a>
 
-            <li class="">
-                <a href="<?= base_url('index.php/pencapaian/cek') ?>">
-                    <i class="menu-icon fa fa-book red"></i>
-                    Pencapaian
-                </a>
+            <b class="arrow"></b>
+        </li>
 
-                <b class="arrow"></b>
-            </li>
+        <li class="">
+            <a href="<?= base_url('index.php/hapalan/cek') ?>">
+                <i class="menu-icon fa fa-book red"></i>
+                Tahfizh
+            </a>
 
-            <li class="">
-                <a href="<?= base_url('index.php/artikel/cek') ?>">
-                    <i class="menu-icon fa fa-book red"></i>
-                    Artikel
-                </a>
+            <b class="arrow"></b>
+        </li>
 
-                <b class="arrow"></b>
-            </li>
+        <li class="">
+            <a href="#" class="dropdown-toggle">
+                <i class="menu-icon fa fa-inbox"></i>
+                Observasi
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
 
-            <li class="">
-                <a href="<?= base_url('index.php/hapalan/cek') ?>">
-                    <i class="menu-icon fa fa-book red"></i>
-                    Tahfizh
-                </a>
+            <b class="arrow"></b>
 
-                <b class="arrow"></b>
-            </li>
+            <ul class="submenu">
+                <li class="">
+                    <a href="<?= base_url('index.php/observasi') ?>">
+                        <i class="menu-icon fa fa-pencil green"></i>
+                        Input Observasi
+                    </a>
 
-            <li class="">
-                <a href="#" class="dropdown-toggle">
-                    <i class="menu-icon fa fa-inbox"></i>
-                    Observasi
-                    <b class="arrow fa fa-angle-down"></b>
-                </a>
+                    <b class="arrow"></b>
+                </li>
 
-                <b class="arrow"></b>
+                <li class="">
+                    <a href="<?= base_url('index.php/observasi/cek') ?>">
+                        <i class="menu-icon fa fa-book orange"></i>
+                        Laporan Observasi
+                    </a>
 
-                <ul class="submenu">
-                    <li class="">
-                        <a href="<?= base_url('index.php/observasi') ?>">
-                            <i class="menu-icon fa fa-pencil green"></i>
-                            Input Observasi
-                        </a>
-
-                        <b class="arrow"></b>
-                    </li>
-
-                    <li class="">
-                        <a href="<?= base_url('index.php/observasi/cek') ?>">
-                            <i class="menu-icon fa fa-book orange"></i>
-                            Laporan Observasi
-                        </a>
-
-                        <b class="arrow"></b>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </li>
+                    <b class="arrow"></b>
+                </li>
+            </ul>
+        </li>
     
     <li>
         <a href="#" class="dropdown-toggle">
@@ -141,62 +126,50 @@
     <?php endif; ?>
 
     <?php if($this->session->userdata('status') != 'menejemen') : ?>
-    <li class="">
-        <a href="#" class="dropdown-toggle">
-            <i class="menu-icon fa fa-pencil-square-o"></i>
-            <span class="menu-text">Isi Form (Santri)</span>
-            <b class="arrow fa fa-angle-down"></b>
-        </a>
+        <li class="">
+            <a href="<?= base_url('index.php/partisipasi') ?>">
+                <i class="menu-icon fa fa-pencil orange"></i>
+                Partisipasi Program
+            </a>
 
-        <b class="arrow"></b>
+            <b class="arrow"></b>
+        </li>
 
-        <ul class="submenu nav-hide">
-            <li class="">
-                <a href="<?= base_url('index.php/partisipasi') ?>">
-                    <i class="menu-icon fa fa-pencil orange"></i>
-                    Partisipasi Program
-                </a>
+        <li class="">
+            <a href="<?= base_url('index.php/pencapaian') ?>">
+                <i class="menu-icon fa fa-pencil orange"></i>
+                Pencapaian Target
+            </a>
 
-                <b class="arrow"></b>
-            </li>
+            <b class="arrow"></b>
+        </li>
 
-            <li class="">
-                <a href="<?= base_url('index.php/pencapaian') ?>">
-                    <i class="menu-icon fa fa-pencil orange"></i>
-                    Pencapaian Target
-                </a>
+        <li class="">
+            <a href="<?= base_url('index.php/hapalan'); ?>">
+                <i class="menu-icon fa fa-pencil orange"></i>
+                Tahfizh
+            </a>
 
-                <b class="arrow"></b>
-            </li>
+            <b class="arrow"></b>
+        </li>
 
-            <li class="">
-                <a href="<?= base_url('index.php/hapalan'); ?>">
-                    <i class="menu-icon fa fa-pencil orange"></i>
-                    Tahfizh
-                </a>
+        <li class="">
+            <a href="<?= base_url('index.php/pelanggaran') ?>">
+                <i class="menu-icon fa fa-pencil orange"></i>
+                Pelanggaran
+            </a>
 
-                <b class="arrow"></b>
-            </li>
+            <b class="arrow"></b>
+        </li>
 
-            <li class="">
-                <a href="<?= base_url('index.php/pelanggaran') ?>">
-                    <i class="menu-icon fa fa-pencil orange"></i>
-                    Pelanggaran
-                </a>
+        <li class="">
+            <a href="<?= base_url('index.php/artikel') ?>">
+                <i class="menu-icon fa fa-pencil orange"></i>
+                Artikel
+            </a>
 
-                <b class="arrow"></b>
-            </li>
-
-            <li class="">
-                <a href="<?= base_url('index.php/artikel') ?>">
-                    <i class="menu-icon fa fa-pencil orange"></i>
-                    Artikel
-                </a>
-
-                <b class="arrow"></b>
-            </li>
-        </ul>
-    </li>
+            <b class="arrow"></b>
+        </li>
     <?php endif; ?>
 
     <li>
