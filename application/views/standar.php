@@ -94,7 +94,7 @@
 
 						<li class="green dropdown-modal">
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="<?= base_url('foto/') ?><?= $this->session->userdata('foto') ?>" alt="<?= $this->session->userdata('nama') ?>">
+								<img class="nav-user-photo" width="40" height="40" src="<?= base_url('foto/') ?><?= $this->session->userdata('foto') ?>" alt="<?= $this->session->userdata('nama') ?>">
 								<span class="user-info">
 									<small>Welcome,</small>
 									<?= $this->session->userdata('nama'); ?>
